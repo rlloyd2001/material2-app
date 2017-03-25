@@ -1,6 +1,6 @@
 import { M2AppPage } from './app.po';
 
-describe('m2-app App', function() {
+describe('m2-app App', () => {
   let page: M2AppPage;
 
   beforeEach(() => {
