@@ -8,7 +8,7 @@ import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
   styleUrls: ['app.component.css'],
 })
 export class AppComponent {
-  isDarkTheme: boolean = false;
+  isDarkTheme: boolean;
   lastDialogResult: string;
 
   foods: any[] = [
@@ -17,7 +17,7 @@ export class AppComponent {
     {name: 'French fries', rating: 'Pretty good'},
   ];
 
-  progress: number = 0;
+  progress: number;
 
   constructor(private _dialog: MdDialog, private _snackbar: MdSnackBar) {
     // Update the value for the progress-bar on an interval.
@@ -27,11 +27,11 @@ export class AppComponent {
   }
 
   openDialog() {
-    let dialogRef = this._dialog.open(DialogContent);
+    const dialogRef = this._dialog.open(DialogContentComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       this.lastDialogResult = result;
-    })
+    });
   }
 
   showSnackbar() {
@@ -52,6 +52,6 @@ export class AppComponent {
     <p> <button md-button (click)="dialogRef.close(dialogInput.value)">CLOSE</button> </p>
   `,
 })
-export class DialogContent {
-  constructor(@Optional() public dialogRef: MdDialogRef<DialogContent>) { }
+export class DialogContentComponent {
+  constructor(@Optional() public dialogRef: MdDialogRef<DialogContentComponent>) { }
 }

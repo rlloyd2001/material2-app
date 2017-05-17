@@ -6,12 +6,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
-import { AppComponent, DialogContent } from './app.component';
+import { AppComponent, DialogContentComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogContent
+    DialogContentComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +21,7 @@ import { AppComponent, DialogContent } from './app.component';
     MaterialModule
   ],
   providers: [],
-  entryComponents: [DialogContent],
+  entryComponents: [DialogContentComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
