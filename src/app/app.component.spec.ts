@@ -1,5 +1,7 @@
+import 'hammerjs';
 import { TestBed, async } from '@angular/core/testing';
-
+import { MaterialModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -8,6 +10,10 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      imports: [
+        MaterialModule,
+        BrowserAnimationsModule
+      ]
     }).compileComponents();
   }));
 
